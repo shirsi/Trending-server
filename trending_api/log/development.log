@@ -54,3 +54,144 @@ Processing by UsersController#login as */*
   ↳ app/controllers/users_controller.rb:42:in `login'
 Completed 200 OK in 432ms (Views: 18.4ms | ActiveRecord: 9.0ms | Allocations: 4518)
 
+
+Started POST "/users/login?user[username]=AJ&user[password]=[FILTERED]" for ::1 at 2020-04-03 08:53:07 -0700
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"AJ", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "AJ"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `login'
+Completed 200 OK in 641ms (Views: 0.5ms | ActiveRecord: 32.6ms | Allocations: 4619)
+
+
+Started GET "/users" for ::1 at 2020-04-03 11:14:01 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as */*
+  [1m[36mUser Load (3.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 54ms (Views: 9.3ms | ActiveRecord: 42.9ms | Allocations: 4891)
+
+
+Started GET "/users/login" for ::1 at 2020-04-03 11:14:32 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+Completed 404 Not Found in 9ms (ActiveRecord: 0.9ms | Allocations: 1054)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/controllers/users_controller.rb:54:in `set_user'
+Started GET "/users/login" for ::1 at 2020-04-03 11:15:18 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 595)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/controllers/users_controller.rb:54:in `set_user'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4328717010539874645)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (4.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4328717010539874645)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/users/login" for ::1 at 2020-04-03 11:18:14 -0500
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#login as */*
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1018)
+
+
+  
+NoMethodError (undefined method `[]' for nil:NilClass):
+  
+app/controllers/users_controller.rb:42:in `login'
+Started POST "/users/login?user[username]=Thomas&user[password]=[FILTERED]" for ::1 at 2020-04-03 11:19:56 -0500
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"Thomas", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Thomas"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `login'
+Completed 200 OK in 234ms (Views: 0.4ms | ActiveRecord: 7.6ms | Allocations: 6020)
+
+
+Started GET "/users/login" for ::1 at 2020-04-03 11:21:05 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+Completed 404 Not Found in 9ms (ActiveRecord: 4.5ms | Allocations: 2056)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/controllers/users_controller.rb:54:in `set_user'
+Started GET "/users" for ::1 at 2020-04-03 11:22:11 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 9.9ms | ActiveRecord: 1.9ms | Allocations: 3886)
+
+
+Started GET "/users" for ::1 at 2020-04-03 11:23:01 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.3ms | ActiveRecord: 0.3ms | Allocations: 909)
+
+
+Started GET "/users" for ::1 at 2020-04-03 11:23:37 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.0ms | ActiveRecord: 1.9ms | Allocations: 908)
+
+
+Started GET "/users/login" for ::1 at 2020-04-03 11:24:00 -0500
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"login"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:54:in `set_user'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms | Allocations: 610)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=login):
+  
+app/controllers/users_controller.rb:54:in `set_user'
+Started POST "/users/login?user[username]=Thomas&user[password]=[FILTERED]" for ::1 at 2020-04-03 11:24:05 -0500
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"username"=>"Thomas", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."username" = $1 LIMIT $2[0m  [["username", "Thomas"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:42:in `login'
+Completed 200 OK in 226ms (Views: 0.3ms | ActiveRecord: 0.3ms | Allocations: 1033)
+
+
+Started GET "/users" for ::1 at 2020-04-03 11:24:48 -0500
+Processing by UsersController#index as */*
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.5ms | ActiveRecord: 0.3ms | Allocations: 909)
+
+
+Started GET "/users" for ::1 at 2020-04-03 11:25:34 -0500
+Processing by UsersController#index as */*
+Completed 500 Internal Server Error in 199ms (ActiveRecord: 0.0ms | Allocations: 69740)
+
+
+  
+NameError (undefined local variable or method `bearer_token' for #<UsersController:0x00007fef7b2af4f0>):
+  
+app/controllers/application_controller.rb:4:in `authenticate_token'
+Started GET "/users" for ::1 at 2020-04-03 11:26:16 -0500
+Processing by UsersController#index as */*
+Filter chain halted as :authenticate_token rendered or redirected
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 171)
+
+
