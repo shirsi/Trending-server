@@ -10,6 +10,7 @@
 #   { name: 'AJ'},
 # ])
 
-Song.create([{name: 'Toosie Slide', artist:'Drake', video:'https://www.youtube.com/embed/dGYxT1QReQs'}, {name: 'Controlla', artist:'Drake', video:'https://www.youtube.com/embed/otIMbmtav6Q'}])
+# Playlist.create([{title: 'Pop', user_id: 1}, {title: 'Drake Playlist', user_id: 2}])
+Song.create([{name: 'Toosie Slide', artist:'Drake', video:'https://www.youtube.com/embed/dGYxT1QReQs', playlist_id: 1}, {name: 'Controlla', artist:'Drake', video:'https://www.youtube.com/embed/otIMbmtav6Q', playlist_id: 2}])
 
 puts "Seeded database"
